@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<header>
+<style>
+
+    #bgImg {
+        background-image: url(../Content/images/about.jpg);
+        color: white;
+    }
+
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% auto;
+            background-image: url(../Content/images/bg4.jpg);
+        }
+
+        #center-in-bar ul {
+    
+    text-align:center; /* center horizontally */
+   /* vertical-align:middle;  center vertically */
+    
+}
+#center-in-bar li {
+   
+    display:inline; /* you might want to use this instead of "inline-block" */
+   
+    text-align:center; /* center horizontally */
+   /* vertical-align:middle;  center vertically */
+    
+}
+
+
+     </style>
+
+    </header>
+<body>
+
+   
+
+    <div id="bgImg" >
+       
+    <h1 > Pendig Orders: </h1>
+           
+        </div>
+    
+
+<blockquote>
+
+   @foreach (var Order in Model)
+    {
+       <div class="well well-lg"  id="center-in-bar">
+            <ul>
+                <li>
+                    <b>ID:</b>  @Order.Id  <br />
+                    <b>Name:</b>  @Order.name <br />
+                    <b>Adress:</b>  @Order.add <br />
+                    <b>Contact:</b>  @Order.num <br />
+                    <b>Email:</b>  @Order.email <br />
+                    <b>Food Quantity:</b>  @Order.food_quan <br />
+                    <b>Food Name:</b>  @Order.food_name <br />
+                    <b>Comment:</b>  @Order.comment <br />
+                    <b>Status:</b>  @Order.status <br />
+                    
+       
+        
+            @Html.ActionLink("Edit", "UpdateItem") 
+            
+        
+    
+
+                </li>
+
+            </ul>
+
+            </div>
+        <br />
+   }
+
+
+</blockquote>
+       
+</body>

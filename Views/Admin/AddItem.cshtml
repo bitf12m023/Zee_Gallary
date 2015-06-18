@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "AddItem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>AddItem</h2>
+
+<header>
+ <style>
+
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% auto;
+            background-image: url(../Content/images/bg4.jpg);
+        }
+     </style>
+</header>
+
+<body>
+
+   
+<form action="/home/AddItem" method="post" enctype="multipart/form-data" >
+
+    Upload Image: <input type="file" name="image" />
+ 
+     
+ 
+    <input type="submit" value="upload" />
+</form>
+
+
+
+@using (Html.BeginForm("AddItem", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" size="85" />
+    <input type="submit" value="ok" size="60" />
+    
+}
+
+
+    </body>

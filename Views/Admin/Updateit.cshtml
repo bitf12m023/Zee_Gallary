@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Updateit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model project.Models.Italian
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <style>
+
+    #bgImg {
+        background-image: url(../Content/images/about.jpg);
+        color: white;
+    }
+
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% auto;
+            background-image: url(../Content/images/bg4.jpg);
+        }
+         </style>
+</head>
+<body >
+    <div style="font-weight:bold;margin-left:10%">
+        <br /><br /><br /><br /><br />
+         @using (Html.BeginForm("Updatei", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            
+            <fieldset>
+        <legend>Edit </legend>
+           @* @Html.HiddenFor(m => m.Id)*@
+                @Html.LabelFor(m => m.Id)
+            @Html.EditorFor(m => m.Id)
+                
+           
+            <br /><br />
+
+
+            @Html.LabelFor(m => m.Name)
+            @Html.EditorFor(m => m.Name)
+    <br /><br />
+
+                
+                 @Html.LabelFor(m => m.Description)
+            @Html.EditorFor(m => m.Description)
+    <br /><br />
+                 @Html.LabelFor(m => m.Price)
+            @Html.EditorFor(m => m.Price)
+    <br /><br />
+                
+   
+           
+                <input type="submit" value="Update status " />
+           </fieldset>
+        }
+            
+        
+    </div>
+
+
+</body>
+</html>

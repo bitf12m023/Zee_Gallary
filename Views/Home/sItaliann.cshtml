@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "sItaliann";
+    Layout = null;
+    }
+
+<style>
+
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% auto;
+            background-image: url(../Content/images/bg4.jpg);
+        }
+
+        #bgImg {
+        background-image: url(../Content/images/about.jpg);
+        color: white;
+    }
+   
+          </style>
+
+<div   id="bgImg">
+   <p class="lead" style="font-family:'Hobo Std'; font-size:x-large; color:white"> &nbsp&nbsp&nbsp&nbsp  SEARCH BY CATEGORY </p>
+    
+</div>
+<br /> <br />
+@using (Html.BeginForm(new RouteValueDictionary { { "controller", "Home" }, { "action", "searchItaliann" }, { "Name", "name" }}))
+{
+    @*@Html.Editor("name")*@
+
+    @Html.TextBox("name")
+
+    <input type="submit" value="search"/>                        
+}
+

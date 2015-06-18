@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "AddChinese";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model project.Models.chinese
+
+<style>
+
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% auto;
+            background-image: url(../Content/images/bg4.jpg);
+        }
+
+        #bgImg {
+        background-image: url(../Content/images/about.jpg);
+        color: white;
+    }
+   
+          </style>
+
+<div   id="bgImg">
+   <p class="lead" style="font-family:'Hobo Std'; font-size:x-large; color:white"> &nbsp&nbsp&nbsp&nbsp  ADD FOOD: </p>
+    
+</div>
+<br /> <br />
+
+<div style="font-weight:bold;margin-left:10%">
+        @using (Html.BeginForm("Addc", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+           @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name)
+             <br /><br />
+
+            @Html.LabelFor(m => m.Description)
+            @Html.TextBoxFor(m => m.Description)
+            <br/><br/>
+
+             @Html.LabelFor(m => m.Price)
+            @Html.TextBoxFor(m => m.Price)
+            <br/><br/>
+
+           
+            <input multiple="multiple" type="file" name="file" id="file" size="85" />
+    <br /><br />
+
+            <input type="submit" value="Add Food" size="60" />
+        }
+    </div>

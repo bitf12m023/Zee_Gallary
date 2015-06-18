@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "modifydisplay";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    
+}
+
+@using project.Models
+
+<header>
+<style>
+
+    #bgImg {
+        background-image: url(../Content/images/about.jpg);
+        color: white;
+    }
+
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% auto;
+            background-image: url(../Content/images/bg4.jpg);
+        }
+
+        #center-in-bar ul {
+    
+    text-align:center; /* center horizontally */
+   /* vertical-align:middle;  center vertically */
+    
+}
+#center-in-bar li {
+   
+    display:inline; /* you might want to use this instead of "inline-block" */
+   
+    text-align:center; /* center horizontally */
+   /* vertical-align:middle;  center vertically */
+    
+}
+
+
+     </style>
+
+    </header>
+<body>
+
+
+    
+
+<blockquote>
+
+   <div>
+    <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>NAME</th>
+                <th>Price</th>
+                
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </tr>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Name</td>
+                    <td>@c.price</td>
+          
+                    <td><a href="@Url.Action("Updatepak")">Update</a></td>
+                    <td><a href="@Url.Action("Deletepak")">Delete</a></td>
+
+                   
+                    
+
+                        
+                 </tr>
+               
+            }
+            
+            
+        </table>
+
+                
+
+            </div>
+        <br />
+   
+
+
+</blockquote>
+       
+</body>

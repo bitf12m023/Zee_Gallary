@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Order</title>
+
+    <script>
+
+        $('#CategorySelector').change(function () {
+            var value = $('#CategorySelector').val();
+
+            $('#d1').load("~/Home/Category?cat=" + value);
+        });
+
+</script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-2" style="text-align:right">
+        </div>
+
+        <div class="col-sm-4">
+            <form class="navbar-form" method="post" action="/Home/SubmitOrder">
+                <div style="font-weight:bold">
+
+                    Name<input type="text" class="form-control" name="name" placeholder="Enter Name.." style="width:400px" required />
+                    <br/> <br/>
+                    Contact No. <input type="tel" class="form-control" name="num" placeholder="Conact Number" style="width:400px" required />
+                    <br/> <br/>
+                    Email<input type="email" class="form-control" name="email" placeholder="Email" style="width:400px" required />
+                    <br/><br/>
+                    Address<input type="text" class="form-control" name="add" placeholder="Address" style="width:400px" required />
+                    <br/><br/>
+                    
+                    Food: <select name="food_name" class="form-control" id="CategorySelector">
+                        <option value="b0"> -- Select -- </option>
+
+                        <option value="Pak">Pakistani</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="about">Fast</option>
+                        
+                    </select>
+
+                    
+                    <select name="food_quan" class="form-control">
+                        <option value="bq0"> -- Quantity -- </option>
+                        <option value="bq1">01</option>
+                        <option value="bq2">02</option>
+                        <option value="bq3">03</option>
+                        <option value="bq5">05</option>
+                        <option value="bq10">10</option>
+                        <option value="bq20">20</option>
+                    </select>
+                    <br/><br/>
+
+                     Food Name:<textarea class="form-control" rows="8" cols="50" name="note" placeholder="Mention the selected food name" required></textarea>
+                    <br />
+
+                    Cold Drinks: <select name="coldDrinks" class="form-control">
+                        <option value="c0"> -- Select -- </option>
+                        <option value="c1">Pepsi - 1.5 Liter</option>
+                        <option value="c2">7up - 1.5 Liter</option>
+                        <option value="c3">Do the Dew - 1.5 Liter</option>
+                        <option value="c4">Marinda - 1.5 Liter</option>
+                        <option value="c5">Coke - 1.5 Liter</option>
+                        <option value="c6">Sprite - 1.5 Liter</option>
+                    </select>
+
+                    <select name="cQuantity" class="form-control" >
+                        <option value="cq0"> -- Quantity -- </option>
+                        <option value="cq1">01</option>
+                        <option value="cq2">02</option>
+                        <option value="cq3">03</option>
+                        <option value="cq4">04</option>
+                        <option value="cq5">05</option>
+                        <option value="cq10">10</option>
+                    </select>
+                    <br/><br/>
+
+                    Comment:<textarea class="form-control" rows="8" cols="50" name="comment" placeholder="Comments" required></textarea>
+                    <br />
+
+                    <div class="checkbox">
+                        <label><input class="check-box" type="checkbox" name="checkbox"> Remember me</label>
+                    </div>
+                    <br /><br />
+                    <button type="submit" class="btn btn-default" value="sub"> Order Now </button>
+                    <button type="reset" class="btn btn-danger" value="sub"> Cancel Order </button>
+                </div>
+
+
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <p></p>
+        </div>
+
+</body>
+</html>

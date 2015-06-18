@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Deleteit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+
+}
+
+@model project.Models.Italian
+
+<!DOCTYPE html>
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <style>
+
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% auto;
+            background-image: url(../Content/images/bg4.jpg);
+        }
+
+        #bgImg {
+        background-image: url(../Content/images/about.jpg);
+        color: white;
+    }
+   
+          </style>
+
+<div   id="bgImg">
+   <p class="lead" style="font-family:'Hobo Std'; font-size:x-large; color:white"> &nbsp&nbsp&nbsp&nbsp  delete FOOD: </p>
+    
+</div>
+<br /> <br />
+
+</head>
+<body >
+    <br /><br /><br /><br /><br />
+    <div style="font-weight:bold;margin-left:10%">
+        @using (Html.BeginForm("Deletei", "Admin", FormMethod.Post))
+        {
+            @Html.LabelFor(m => m.Id)
+             @Html.EditorFor(m => m.Id)
+             <br /><br />
+            @Html.LabelFor(m => m.Name)
+            @Html.EditorFor(m => m.Name)
+             <br /><br />
+            
+            <input type="submit" value="Delete Food" />
+        }
+    </div>
+    
+</body>
+

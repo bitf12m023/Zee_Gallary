@@ -1,0 +1,84 @@
+﻿@using project.Models;
+
+@{
+    ViewBag.Title = "NewItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+<style>
+
+    #bgImg {
+        background-image: url(../Content/images/about.jpg);
+        color: white;
+    }
+
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% auto;
+            background-image: url(../Content/images/bg4.jpg);
+        }
+
+        #center-in-bar ul {
+    
+    text-align:center; /* center horizontally */
+   /* vertical-align:middle;  center vertically */
+    
+}
+#center-in-bar li {
+   
+    display:inline; /* you might want to use this instead of "inline-block" */
+   
+    text-align:center; /* center horizontally */
+   /* vertical-align:middle;  center vertically */
+    
+}
+
+
+     </style>
+
+    </header>
+<body>
+
+      
+
+    <div id="bgImg" >
+       
+    <h1 > NEW ITEMS : </h1>
+           
+        </div>
+    @{
+        var count = 0;
+    }
+
+<blockquote>
+
+   @foreach (NewItem item in Model)
+    {
+       <div class="well well-lg"  id="center-in-bar">
+            <ul>
+                <li>
+                     
+  @if(count< item.path)
+  {
+        <img src="~/Content/newImag/@ViewBag.news.Id-(count++).jpg " />
+    }
+                    <b>ID:</b>  @item.Id <br />
+                    <b>Food Name:</b>  @item.name <br />
+                    <b>Description:</b>  @item.desc <br />
+                    @*<b></b><img class="img img-thumbnail seemoreimg" style="height:150px;width:300px" src="~/Files/@NewItem.path" /> <br />*@
+
+
+                </li>
+
+            </ul>
+
+            </div>
+   }
+        <br />
+   
+   
+</blockquote>
+       
+</body>

@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "spakp";
+    Layout = null;
+}
+@using project.Models
+<header>
+<style>
+
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% auto;
+            background-image: url(../Content/images/bg4.jpg);
+        }
+
+        #bgImg {
+        background-image: url(../Content/images/about.jpg);
+        color: white;
+    }
+   
+          </style>
+    </header> 
+<body>
+
+
+    @{pak p= new pak();}
+<div   id="bgImg">
+   <p class="lead" style="font-family:'Hobo Std'; font-size:x-large; color:white"> &nbsp&nbsp&nbsp&nbsp  SEARCH BY CATEGORY </p>
+    
+</div>
+<br /> <br />
+<div id="top-search">
+                <form method="post" action="/Home/searchpakp">
+                  <input type="text" name="Price" class="input-search">
+                    <input type="submit" value="Search" id="submit">
+                </form>
+            
+    </div>
