@@ -116,8 +116,8 @@
                 <div class="modal-body">
                    @for (int i = 1; i <= @it.count; i++)
                    {
-                    <img class="img-responsive img-rounded" src="~/Files/@it.Id-@i-.jpg" height="50" width="50"/>
-                    }
+                       <img class="img-responsive img-rounded" data-target="#mymodal-@it.Id" data-toggle="modal" src="~/Content/images/@it.Id-@i-i.jpg" height="50" width="50" />
+                   }
                 </div>
 
             </div>

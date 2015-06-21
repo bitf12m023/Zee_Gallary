@@ -120,10 +120,10 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    @for (int i = 1; i <= @Italian.count; i++)
+                   @for (int i = 1; i <= @Italian.count; i++)
                    {
-                    <img class="img-responsive img-rounded" src="~/Files/@Italian.Id-@i-.jpg" height="50" width="50"/>
-                    }
+                       <img class="img-responsive img-rounded" data-target="#mymodal-@Italian.Id" data-toggle="modal" src="~/Content/images/@Italian.Id-@i-c.jpg" height="50" width="50" />
+                   }
                 </div>
 
             </div>
